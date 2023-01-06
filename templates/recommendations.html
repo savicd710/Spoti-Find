@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block recommendations %}
+<div class="recommendations">
+    <h2 style="color:antiquewhite">We recommend giving these songs a try!</h2>
+        {% for i in temp_df %}
+        <p class="recommendation" style="color: antiquewhite;"> {{ temp_df[i] }}</p>
+        {% endfor %}
+</div>
+{% endblock %}

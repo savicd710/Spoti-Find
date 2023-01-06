@@ -46,7 +46,7 @@
       <h2 style="color:antiquewhite">Input your Spotify Playlist link</h2>
       <br>
       <div class="ml-container">
-        <form action="{{ url_for('playlist') }}" id="form" method="POST">
+        <form action="{{ url_for('recommendations') }}" id="form" method="POST">
           <input class="input1" type="text" name="URL">
           <br>
           <label style="color:antiquewhite" for="recommend-size">How many songs would you like to have suggested?</label>
@@ -60,6 +60,11 @@
           <input class="button1" form="form" value="Click to make the magic happen!" type="submit">
         </form>
       </div>
+    </div>
+    <br>
+    <div class="recommendations">
+      {% block recommendations %}
+      {% endblock %}
     </div>
   </div>
 

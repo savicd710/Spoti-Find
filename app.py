@@ -6,8 +6,7 @@ import numpy as np
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
-from functions.functions import extract_user_playlist
-from functions.machine_learning import generate_recommendation
+from functions.functions import extract_user_playlist, song_chooser, generate_recommendation
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -43,8 +42,10 @@ def recommendations():
 
     # Extract the songs from the user input playlist
     user_playlist = extract_user_playlist(URL)
+    song = song_chooser(URL)
+    recommended_songs = generate_recommendation(song) 
 
-    return render_template('recommendations.html', user_playlist=user_playlist)
+    return render_template('recommendations.html', user_playlist=user_playlist, recommended_songs=recommended_songs)
 
 
 # debugger to edit while running

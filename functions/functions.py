@@ -5,6 +5,7 @@ import os
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
 
 load_dotenv()
 CLIENT_ID = os.getenv('CLIENT_ID')
@@ -13,6 +14,24 @@ CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 client_credentials_manager = SpotifyClientCredentials(
     client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+
+data = pd.read_csv("data/updated_music.csv", encoding='utf-8')
+data.drop(columns='Unnamed: 0',inplace=True)
+
+feature_cols=['acousticness', 'danceability', 'duration_ms', 'energy',
+            'instrumentalness', 'key', 'liveness', 'loudness', 'mode',
+            'speechiness', 'tempo', 'time_signature', 'valence']
+
+from sklearn.preprocessing import MinMaxScaler
+scaler = MinMaxScaler()
+normalized_df =scaler.fit_transform(data[feature_cols])
+
+# Create a pandas series with song titles as indices and indices as series values 
+indices = pd.Series(data.index, index=data['song_name']).drop_duplicates()
+
+# Create cosine similarity matrix based on given matrix
+cosine = cosine_similarity(normalized_df)
+
 
 def extract_user_playlist(url):
     # Split the url and use Spotipy to retrieve the track information for each song in the playlist
@@ -68,3 +87,25 @@ def song_chooser(url):
     song_search = clean_df[f'distance_for_{search_variable}'].idxmin()
     
     return song_search
+
+def generate_recommendation(song_name, model_type=cosine ):
+    try:
+        """
+        Purpose: Function for song recommendations 
+        Inputs: song title and type of similarity model
+        Output: Pandas series of recommended songs
+        """
+        # Get song indices
+        index=indices[song_name]
+        # Get list of songs for given songs
+        score=list(enumerate(model_type[index]))
+        # Sort the most similar songs
+        similarity_score = sorted(score,key = lambda x:x[1],reverse = True)
+        # Select the top-10 recommend songs
+        similarity_score = similarity_score[1:21]
+        top_songs_index = [i[0] for i in similarity_score]
+        # Top 10 recommende songs
+        top_songs=data['song_name'].iloc[top_songs_index]
+        return top_songs
+    except:
+        return 'Our database cannot match your playlist style'

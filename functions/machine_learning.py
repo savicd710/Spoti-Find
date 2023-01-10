@@ -9,7 +9,7 @@ from sklearn import preprocessing
 import warnings
 warnings.filterwarnings("ignore")
 
-data = pd.read_csv('./data/updated_music.csv')
+data = pd.read_csv("../Spoti-Find/data/updated_music.csv")
 data.drop(columns='Unnamed: 0',inplace=True)
 
 feature_cols=['acousticness', 'danceability', 'duration_ms', 'energy',

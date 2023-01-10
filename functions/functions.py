@@ -5,7 +5,6 @@ import os
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 import numpy as np
-from machine_learning import generate_recommendation
 
 load_dotenv()
 CLIENT_ID = os.getenv('CLIENT_ID')

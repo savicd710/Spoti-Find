@@ -21,8 +21,10 @@ a {
 }
 
 .navtextcolor {
-    color: antiquewhite;
-    font-size: 23px;
+    /* text-decoration: none; */
+	color: antiquewhite;
+	font-size: 19px;
+    margin-left: 4px;
 }
 
 h1 {

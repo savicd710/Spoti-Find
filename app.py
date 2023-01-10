@@ -7,6 +7,7 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
 from functions.functions import extract_user_playlist
+from functions.machine_learning import generate_recommendation
 from dotenv import load_dotenv
 
 load_dotenv()

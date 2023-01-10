@@ -4,7 +4,6 @@ import pandas as pd
 import os
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
-import numpy as np
 
 load_dotenv()
 CLIENT_ID = os.getenv('CLIENT_ID')
@@ -13,12 +12,6 @@ CLIENT_SECRET = os.getenv('CLIENT_SECRET')
 client_credentials_manager = SpotifyClientCredentials(
     client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
-
-
-
-
-
-
 
 def extract_user_playlist(url):
     # Split the url and use Spotipy to retrieve the track information for each song in the playlist
@@ -53,23 +46,3 @@ def extract_user_playlist(url):
     features_df = features_df[['artist','title','album_url','album_art','id','danceability','energy','loudness','speechiness','acousticness','liveness','valence']]
     
     return features_df
-
-def song_chooser(url):
-
-    user_df = extract_user_playlist(url)
-    clean_df = user_df[['acousticness', 'danceability', 'energy','liveness', 'loudness', 'speechiness', 'valence', 'title']]
-    
-    user_avg_scores = clean_df.mean(axis=0)
-    search_variable = user_avg_scores.idxmax()
-
-    distance = []
-    for index, row in clean_df.iterrows():
-        point1 = user_avg_scores[search_variable]
-        point2 = np.array(row[search_variable])
-        dist = np.linalg.norm(point1 - point2)
-        distance.append(dist)
-    clean_df[f'distance_for_{search_variable}'] = distance
-    clean_df.set_index('title', inplace= True)
-    song_search = clean_df[f'distance_for_{search_variable}'].idxmin()
-    
-    return song_search

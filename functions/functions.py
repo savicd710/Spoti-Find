@@ -5,6 +5,7 @@ import os
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 import numpy as np
+from machine_learning import generate_recommendation
 
 load_dotenv()
 CLIENT_ID = os.getenv('CLIENT_ID')
@@ -52,17 +53,19 @@ def song_chooser(url):
 
     user_df = extract_user_playlist(url)
     clean_df = user_df[['acousticness', 'danceability', 'energy','liveness', 'loudness', 'speechiness', 'valence', 'title']]
-
+    
     user_avg_scores = clean_df.mean(axis=0)
-    search_variable = clean_df.idxmax()
-
+    search_variable = user_avg_scores.idxmax()
+    
     distance = []
     for index, row in clean_df.iterrows():
         point1 = user_avg_scores[search_variable]
         point2 = np.array(row[search_variable])
         dist = np.linalg.norm(point1 - point2)
         distance.append(dist)
+    
     clean_df[f'distance_for_{search_variable}'] = distance
-    clean_df.set_index('song_name', inplace= True)
-    song_search = clean_df['distance_for_energy'].idxmin()
+    clean_df.set_index('title', inplace= True)
+    song_search = clean_df[f'distance_for_{search_variable}'].idxmin()
+    
     return song_search

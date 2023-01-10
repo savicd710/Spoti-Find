@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request
 import os
 import json
 import pandas as pd
+import numpy as np
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
@@ -21,8 +22,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def echo():
-    return render_template('index.html')
+    return render_template('welcome.html')
 
+@app.route('/index')
+def index():
+    return render_template('index.html')
 
 @app.route('/playlist')
 def playlist():
@@ -34,9 +38,9 @@ def features():
     return render_template('features.html')
 
 
-@app.route('/contacts')
+@app.route('/about')
 def contacts():
-    return render_template('contacts.html')
+    return render_template('about.html')
 
 
 @app.route('/recommendations', methods=['POST'])

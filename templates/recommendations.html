@@ -3,18 +3,18 @@
 <div class="recommendations">
     <div class="row">
         <div class="col-lg-6 col-md-12">
-            <h2 style="color:antiquewhite">Current Playlist</h2>
+            <h2>Current Playlist</h2>
             {% for track in user_playlist.iterrows() %}
             <a href="{{ track[1]['album_url'] }}" target="_blank"><img src="{{ track[1]['album_art'] }}"
                     onerror="this.onerror=null;this.src='../static/images/default_cover_art.png';"
                     class="cover-art"></a>
-            <p class="song-info" style="color: antiquewhite;"><a
+            <p class="song-info"><a
                     href="https://open.spotify.com/track/{{track[1]['id']}}" target="_blank">{{ track[1]['artist'] }} -
                     {{ track[1]['title'] }}</a></p>
             {% endfor %}
         </div>
         <div class="col-lg-6 col-md-12">
-            <h2 style="color:antiquewhite">Recommended Songs</h2>
+            <h2>Recommended Songs</h2>
         </div>
     </div>
 </div>

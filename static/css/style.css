@@ -1,16 +1,24 @@
 body {
-    background-color:black;
+    background-color: black;
 }
+
 nav {
     width: 100%;
-    background: #4CBB17;
+    background: #5107b1;
     height: 80px;
-
 }
+
 a {
     padding-left: 25px;
 }
+
 .navtextcolor {
     color: white;
     font-size: 25px;
 }
+
+h1 {
+    color: white;
+    font-size: 25px;
+}
+

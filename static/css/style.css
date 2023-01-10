@@ -1,12 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
 body {
-    background-image: url('../images/image_processing20210701-10353-1ygpgl3.gif');
+    background-image: url('../images/spotify_gif_2.gif');
     background-color: black;
 }
 
 nav {
     width: 100%;
     background: #1DB954;
-    height: 80px;
+    height: 70px;
 }
 
 a {
@@ -15,7 +22,7 @@ a {
 
 .navtextcolor {
     color: antiquewhite;
-    font-size: 25px;
+    font-size: 23px;
 }
 
 h1 {

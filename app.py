@@ -22,20 +22,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def echo():
-    return render_template('welcome.html')
-
-@app.route('/index')
-def index():
     return render_template('index.html')
 
-@app.route('/playlist')
-def playlist():
-    return render_template('playlist.html')
 
-
-@app.route('/features')
-def features():
-    return render_template('features.html')
+@app.route('/input')
+def index():
+    return render_template('input.html')
 
 
 @app.route('/about')

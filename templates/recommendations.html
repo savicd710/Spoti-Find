@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "input.html" %}
 {% block recommendations %}
 <div class="recommendations">
     <div class="row">
@@ -8,8 +8,8 @@
             <a href="{{ track[1]['album_url'] }}" target="_blank"><img src="{{ track[1]['album_art'] }}"
                     onerror="this.onerror=null;this.src='../static/images/default_cover_art.png';"
                     class="cover-art"></a>
-            <p class="song-info"><a
-                    href="https://open.spotify.com/track/{{track[1]['id']}}" target="_blank">{{ track[1]['artist'] }} -
+            <p class="song-info"><a href="https://open.spotify.com/track/{{track[1]['id']}}" target="_blank">{{
+                    track[1]['artist'] }} -
                     {{ track[1]['title'] }}</a></p>
             {% endfor %}
         </div>

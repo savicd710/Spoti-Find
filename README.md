@@ -1,5 +1,5 @@
 # **Spoti-Find**
-#### By Zach Evans, Carolyn Johnson, David Ma, Yonas Michael, Dejan Savic
+#### By Zach Evans, Carolyn Johnson, David Ma, Yonas Michael, Dejan Savic, Wendell Killette Jr.
 ***
 ## **Project Description:**
 We constructed a song recommendation system to help induividuals add songs to favorite playlists. Using spotify API and user-friendly Spotipy, machine learning models were created to be the back bone to the recommendation system; a continuously learning model which gets better time. 

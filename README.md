@@ -11,7 +11,7 @@ We constructed a song recommendation system to help induividuals add songs to fa
 4. **Clean Data** and remove unnecessary information
 5. **Split the data** into training and test sets. You'll use the training set to train your model, and the test set to evaluate its performance.
 6. **Extract features from the data**. Making sure the ML models can use the features
-7. Train a machine learning model. We choose an appropriate model for your data and goals, such as a collaborative filtering model or a content-based recommendation system. You'll then need to train the model using the training data
+7. **Train a machine learning model**. We choose an appropriate model for your data and goals, such as a collaborative filtering model or a content-based recommendation system. You'll then need to train the model using the training data
 8. **Evaluate the model's performance**. Use the test data to evaluate the model's performance in terms of metrics such as precision, recall, and F1 score. You may need to adjust the model's hyperparameters or try a different model if the performance is not satisfactory.
 9. **Use the model to make recommendations**. Once you have a trained model, you can use it to make recommendations to users based on their input.
 

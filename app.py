@@ -44,6 +44,7 @@ def recommendations():
     user_playlist = extract_user_playlist(URL)
     song = song_chooser(URL)
     recommended_songs = generate_recommendation(song) 
+    print(recommended_songs)
 
     return render_template('recommendations.html', user_playlist=user_playlist, recommended_songs=recommended_songs)
 

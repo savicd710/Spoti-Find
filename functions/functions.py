@@ -82,9 +82,9 @@ def song_chooser(url):
         dist = np.linalg.norm(point1 - point2)
         distance.append(dist)
     
-    clean_df[f'distance_for_{search_variable}'] = distance
+    clean_df['distance'] = distance
     clean_df.set_index('title', inplace= True)
-    song_search = clean_df[f'distance_for_{search_variable}'].idxmin()
+    song_search = clean_df['distance'].idxmin()
     
     return song_search
 
@@ -101,11 +101,46 @@ def generate_recommendation(song_name, model_type=cosine ):
         score=list(enumerate(model_type[index]))
         # Sort the most similar songs
         similarity_score = sorted(score,key = lambda x:x[1],reverse = True)
-        # Select the top-10 recommend songs
-        similarity_score = similarity_score[1:21]
+        # Select the top-20 recommend songs
+        similarity_score = similarity_score[1:20]
         top_songs_index = [i[0] for i in similarity_score]
         # Top 10 recommende songs
         top_songs=data['song_name'].iloc[top_songs_index]
-        return top_songs
+        song_list = top_songs.values
+        #turn top_songs into a list and get the track uri from main database
+        recommended_list = []
+        for track in song_list:
+            for i, r in data.iterrows():
+                if r['uri'] in recommended_list:
+                    next
+                else:
+                    if r['song_name'] == track:
+                        recommended_list.append(r['uri'])              
+
+        #using track uri to get front end variables
+        track_ids = []
+        track_titles = []
+        track_artist = []
+        track_album_art = []
+        track_album_url = []
+
+        for track in recommended_list:
+            track = sp.track(track)
+            
+            track_ids.append(track['id'])
+            track_titles.append(track['name'])
+            track_album_art.append(track['album']['images'][2]['url'])
+            track_album_url.append(track['album']['external_urls']['spotify'])
+            artist_list = []
+            for artist in track['artists']:
+                artist_list.append(artist['name'])
+            track_artist.append(artist_list[0])
+
+        #returning as a dataframe
+        recommended_df = pd.DataFrame({'id':track_ids, 'title':track_titles, 'artist':track_artist, 'album_art':track_album_art, 'album_url':track_album_url})
+        
+        return recommended_df
+
     except:
-        return 'Our database cannot match your playlist style'
+        print('song is not in our database')
+        return None

@@ -143,4 +143,5 @@ def generate_recommendation(song_name, model_type=cosine ):
 
     except:
         print('song is not in our database')
-        return None
+        recommended_df = pd.DataFrame({})
+        return recommended_df

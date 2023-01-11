@@ -117,6 +117,9 @@ def generate_recommendation(song_name, model_type=cosine ):
 ---
 Ultimately, we were able to build his song recommendation web application through Python Flask. User provides a link to a spotify playlist. The application will take the playlist and begin requesting metric data on each song in this playlist to give us an idea of the genre of music. Additionally using the machine learning algorithms, user will get returned songs that are similar based on the initial playlist.
 
+![web app](Screenshots/recommender.png)
+
+
 ## Limitations
 The use of of free API do have rate limits which reduced the datasets we could obtain.
 

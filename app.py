@@ -45,8 +45,13 @@ def recommendations():
     user_playlist = extract_user_playlist(URL)
     song = song_chooser(URL)
     recommended_songs = generate_recommendation(song)
-    recommended_songs = recommended_songs[:number_requested]
-    print(recommended_songs)
+
+    # Shuffle the order of the songs in the list
+    if len(recommended_songs)>1:
+        recommended_songs = recommended_songs.sample(number_requested)
+        print(recommended_songs)
+    else:
+        recommended_songs
 
     return render_template('recommendations.html', user_playlist=user_playlist, recommended_songs=recommended_songs)
 

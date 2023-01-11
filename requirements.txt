@@ -259,6 +259,7 @@ pyrsistent @ file:///C:/ci/pyrsistent_1636093225342/work
 PyScreeze==0.1.28
 PySocks @ file:///C:/ci/pysocks_1605307512533/work
 pytest==7.1.1
+python==3.9.12
 python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
 python-dotenv==0.21.0
 python-lsp-black @ file:///tmp/build/80754af9/python-lsp-black_1634232156041/work

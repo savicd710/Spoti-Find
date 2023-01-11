@@ -1,6 +1,6 @@
 * {
-	margin: 0;
-	padding: 0;
+	/* margin: 0;
+	padding: 0; */
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
 }
@@ -27,6 +27,22 @@ a {
     margin-left: 4px;
 }
 
+nav ul li a {
+	text-decoration: none;
+	color: antiquewhite;
+	font-size: 19px;
+}
+
+.dropdown-menu {
+	background-color: antiquewhite;
+	border-color: #1DB954;
+	border-width: 4px;
+}	
+
+#navbarDropdown {
+	color: antiquewhite;
+}
+
 h1 {
     color: antiquewhite;
     font-size: 25px;
@@ -46,6 +62,7 @@ label {
     padding-bottom: 5px;
 }
 
+
 @media(max-width:990px) {
     .navbar {
         width: 100%;
@@ -62,5 +79,24 @@ label {
 
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(29,185,84, 0.75)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    #mediadrop {
+        float: right;
+        background-color: antiquewhite;
+        /* border-color: black; */
+        border-width: 4px;
+        border-radius: 5px;
+    }
+
+    #navbarDropdown {
+        color: black;
+        padding-left: 5px;
+    }
+
+    #colorscheme {
+        color: black;
+        padding-left: 5px;
+        padding-right: 3px;
     }
 }

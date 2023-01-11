@@ -1,6 +1,4 @@
 * {
-    margin: 0;
-	padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
@@ -8,68 +6,7 @@
 body {
     /* background-image: url('../images/spotify_gif_2.gif'); */
     background-color: black;
-    /* align-items: center; */
     text-align: center;
-}
-
-nav {
-    width: 100%;
-    background: #1DB954;
-    /* height: 80px; */
-}
-
-.navtextcolor {
-    color: antiquewhite;
-    font-size: 19px;
-    margin-left: 4px;
-}
-
-.navtextcolor:hover {
-    color: black;
-}
-
-nav ul li {
-    list-style: none;
-    display: inline-block;
-    margin-left: 4px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: antiquewhite;
-    font-size: 19px;
-    margin-left: 4px;
-    margin-right: 4px;
-}
-
-#colorscheme {
-    color: black;
-    font-size: 19px;
-    font-weight: bold;
-}
-
-#colorscheme:hover {
-    color: antiquewhite;
-}
-
-.dropdown-menu {
-    background-color: antiquewhite;
-    border: 4px solid #1DB954;
-    border-radius: 5px;
-    width: fit-content;
-}
-
-.dropdown-item {
-    font-weight: bold;
-}
-
-#navbarDropdown {
-    color: black;
-    font-weight: bold;
-}
-
-#navbarDropdown:hover {
-    color: antiquewhite;
 }
 
 h1 {
@@ -88,16 +25,109 @@ p {
     font-size: 17px;
 }
 
+nav {
+    width: 100%;
+    background: #1DB954;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 4px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 19px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.navtextcolor {
+    color: antiquewhite;
+    font-size: 19px;
+    margin-left: 4px;
+}
+
+.navtextcolor:hover {
+    color: black;
+}
+
+.dropdown-menu {
+    background-color: antiquewhite;
+    border: 4px solid #1DB954;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.dropdown-item {
+    font-weight: bold;
+}
+
+#colorscheme {
+    color: black;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+#colorscheme:hover {
+    color: antiquewhite;
+}
+
+#navbarDropdown {
+    color: black;
+    font-weight: bold;
+}
+
+#navbarDropdown:hover {
+    color: antiquewhite;
+}
+
 a {
-    /* color: antiquewhite; */
     color: black;
     margin: 1px;
 }
 
 a:hover {
-    /* color: black; */
-    /* color: #1DB954; */
     color: antiquewhite;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgb(250, 235, 215, 0.8);
+    transition: 0.3s;
+    border-radius: 15px;
+    background-color: #1DB954;
+    display: inline-block;
+    width: 500px;
+    height: 95px;
+    margin: 7px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(29, 185, 84, 0.8);
+}
+
+.cover-art {
+    padding: 10px;
+    border-radius: 20px;
+    float: left;
+    margin-top: 4px;
+}
+
+.song-info {
+    padding: 8px;
+    margin: 0;
+    color: antiquewhite;
+}
+
+.input {
+    width: 500px;
+    background-color: antiquewhite;
+    border: 4px solid #1DB954;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 label {
@@ -111,51 +141,6 @@ option {
     font-weight: bold;
     border: 3px solid #1DB954;
     border-radius: 4px;
-}
-
-.card {
-    box-shadow: 0 4px 8px 0 rgb(250,235,215,0.8);
-    /* box-shadow: 0 4px 8px 0 rgba(29,185,84,0.8); */
-    transition: 0.3s;
-    border-radius: 15px; /* 5px rounded corners */
-    background-color: #1DB954;
-    /* background-color: antiquewhite; */
-    /* align-items: stretch; */
-    display: inline-block;
-    width: 500px;
-    height: 95px;
-    margin: 7px;
-  }
-
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-    /* box-shadow: 0 8px 16px 0 rgb(250,235,215,0.8); */
-    box-shadow: 0 8px 16px 0 rgba(29,185,84,0.8);
-}
-
-.cover-art {
-    padding: 10px;
-    border-radius: 20px;
-    float: left;
-    /* vertical-align: 50%; */
-    margin-top: 4px;
-}
-
-.song-info {
-    padding: 8px;
-    margin: 0;
-    /* display: inline-block; */
-    /* vertical-align: middle; */
-    color: antiquewhite;
-}
-
-.input {
-    width: 500px;
-    background-color: antiquewhite;
-    border: 4px solid #1DB954;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 5px;
 }
 
 .button {
@@ -185,6 +170,10 @@ option {
     padding: 15px;
 }
 
+#error {
+    color: black;
+    margin: 20px;
+}
 
 @media(max-width:990px) {
     .navbar {
@@ -203,20 +192,19 @@ option {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(29,185,84, 0.75)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     }
 
+    .dropdown-menu {
+        border-color: black;
+    }
+
     #mediadrop {
         color: black;
     }
 
     #navbarDropdown {
         color: black;
-        /* padding-left: 5px; */
     }
 
     #colorscheme {
         color: black;
-    }
-
-    .dropdown-menu {
-        border-color: black;
     }
 }

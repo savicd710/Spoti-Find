@@ -1,13 +1,15 @@
 * {
-    /* margin: 0;
-	padding: 0; */
+    margin: 0;
+	padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-image: url('../images/spotify_gif_2.gif');
+    /* background-image: url('../images/spotify_gif_2.gif'); */
     background-color: black;
+    /* align-items: center; */
+    text-align: center;
 }
 
 nav {
@@ -15,10 +17,6 @@ nav {
     background: #1DB954;
     /* height: 80px; */
 }
-
-/* a {
-    padding-left: 25px;
-} */
 
 .navtextcolor {
     color: antiquewhite;
@@ -45,12 +43,13 @@ nav ul li a {
 }
 
 #colorscheme {
-    color: antiquewhite;
+    color: black;
     font-size: 19px;
+    font-weight: bold;
 }
 
 #colorscheme:hover {
-    color: black;
+    color: antiquewhite;
 }
 
 .dropdown-menu {
@@ -60,12 +59,17 @@ nav ul li a {
     width: fit-content;
 }
 
+.dropdown-item {
+    font-weight: bold;
+}
+
 #navbarDropdown {
-    color: antiquewhite;
+    color: black;
+    font-weight: bold;
 }
 
 #navbarDropdown:hover {
-    color: black;
+    color: antiquewhite;
 }
 
 h1 {
@@ -81,12 +85,104 @@ h2 {
 
 p {
     color: antiquewhite;
+    font-size: 17px;
+}
+
+a {
+    /* color: antiquewhite; */
+    color: black;
+    margin: 1px;
+}
+
+a:hover {
+    /* color: black; */
+    /* color: #1DB954; */
+    color: antiquewhite;
 }
 
 label {
     color: antiquewhite;
-    padding-top: 10px;
-    padding-bottom: 5px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+option {
+    font-weight: bold;
+    border: 3px solid #1DB954;
+    border-radius: 4px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgb(250,235,215,0.8);
+    /* box-shadow: 0 4px 8px 0 rgba(29,185,84,0.8); */
+    transition: 0.3s;
+    border-radius: 15px; /* 5px rounded corners */
+    background-color: #1DB954;
+    /* background-color: antiquewhite; */
+    /* align-items: stretch; */
+    display: inline-block;
+    width: 500px;
+    height: 95px;
+    margin: 7px;
+  }
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    /* box-shadow: 0 8px 16px 0 rgb(250,235,215,0.8); */
+    box-shadow: 0 8px 16px 0 rgba(29,185,84,0.8);
+}
+
+.cover-art {
+    padding: 10px;
+    border-radius: 20px;
+    float: left;
+    /* vertical-align: 50%; */
+    margin-top: 4px;
+}
+
+.song-info {
+    padding: 8px;
+    margin: 0;
+    /* display: inline-block; */
+    /* vertical-align: middle; */
+    color: antiquewhite;
+}
+
+.input {
+    width: 500px;
+    background-color: antiquewhite;
+    border: 4px solid #1DB954;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.button {
+    padding: 7px;
+    background-color: black;
+    color: antiquewhite;
+    border: 4px solid #1DB954;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: antiquewhite;
+    color: black;
+}
+
+#recommend-size {
+    background-color: antiquewhite;
+    border: 4px solid #1DB954;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    margin: 2px;
+}
+
+.row {
+    padding: 15px;
 }
 
 
@@ -108,16 +204,16 @@ label {
     }
 
     #mediadrop {
-        color: antiquewhite;
+        color: black;
     }
 
     #navbarDropdown {
-        color: antiquewhite;
+        color: black;
         /* padding-left: 5px; */
     }
 
     #colorscheme {
-        color: antiquewhite;
+        color: black;
     }
 
     .dropdown-menu {

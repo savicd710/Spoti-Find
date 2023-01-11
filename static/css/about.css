@@ -23,11 +23,12 @@ body {
 }
 
 #colorscheme {
-	color: antiquewhite;
+	color: black;
+	font-weight: bold;
 }
 
 #colorscheme:hover {
-	color: black;
+	color: antiquewhite;
 }
 
 nav {
@@ -69,11 +70,16 @@ nav ul li a {
 }
 
 #navbarDropdown {
-	color: antiquewhite;
+	color: black;
+	font-weight: bold;
 }
 
 #navbarDropdown:hover {
-	color: black;
+	color: antiquewhite;
+}
+
+.dropdown-item {
+    font-weight: bold;
 }
 
 .white-box {

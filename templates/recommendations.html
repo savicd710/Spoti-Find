@@ -4,6 +4,7 @@
     <div class="row">
         <div class="col-lg-6 col-md-12">
             <h2>Current Playlist</h2>
+            {% if user_playlist|length > 1 %}
             {% for track in user_playlist.iterrows() %}
             <div class="card">
                 <a href="{{ track[1]['album_url'] }}" target="_blank"><img src="{{ track[1]['album_art'] }}"
@@ -14,6 +15,12 @@
                             {{ track[1]['title'] }}</a></b></p>
             </div>
             {% endfor %}
+            {% else %}
+            <div class="card">
+                <p id="error"><b>Sorry, it seems you have entered an invalid link. Please try again with
+                        another playlist link.</b></p>
+            </div>
+            {% endif %}
         </div>
         <div class="col-lg-6 col-md-12">
             <h2>Recommended Songs</h2>
@@ -30,8 +37,8 @@
             {% endfor %}
             {% else %}
             <div class="card">
-                <p id="error"><b>Your music taste is too great for our database to recommend new songs. Please try
-                        again.</b></p>
+                <p id="error"><b>Sorry, it seems like we are missing some information on our side. Please try
+                        again with another playlist link.</b></p>
             </div>
             {% endif %}
         </div>

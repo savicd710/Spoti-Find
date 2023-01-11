@@ -1,3 +1,6 @@
+![landing page](https://github.com/dabidma/Spoti-Find/blob/main/Screenshots/landing_page.png)
+
+
 # **Spoti-Find**
 #### By Zach Evans, Carolyn Johnson, David Ma, Yonas Michael, Dejan Savic, Wendell Killette Jr.
 ***

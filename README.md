@@ -6,6 +6,11 @@ We constructed a song recommendation system to help induividuals add songs to fa
 
 ## Project Outline
 1. Set up developer account to **access Spotify API credentials**; making API calls to retrieve necessary data 
+   
+   [Spotipy](https://spotipy.readthedocs.io/en/2.22.0/)
+   
+   [Spotify for Developers](https://developer.spotify.com/)
+   
 2. Take into consideration the **data most useful** for our purposes
 3. Make the data API calls to **retrieve your data**
 4. **Clean Data** and remove unnecessary information
@@ -16,3 +21,4 @@ We constructed a song recommendation system to help induividuals add songs to fa
 9. **Use the model to make recommendations**. Once you have a trained model, you can use it to make recommendations to users based on their input.
 
 
+![Spotify Banner](https://developer.spotify.com/assets/branding-guidelines/using-our-logo.png)

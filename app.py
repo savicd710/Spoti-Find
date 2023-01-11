@@ -39,11 +39,13 @@ def contacts():
 def recommendations():
     # Interacting with the user on the html side
     URL = request.form['URL']
+    number_requested = int(request.form['recommend-size'])
 
     # Extract the songs from the user input playlist
     user_playlist = extract_user_playlist(URL)
     song = song_chooser(URL)
-    recommended_songs = generate_recommendation(song) 
+    recommended_songs = generate_recommendation(song)
+    recommended_songs = recommended_songs[:number_requested]
     print(recommended_songs)
 
     return render_template('recommendations.html', user_playlist=user_playlist, recommended_songs=recommended_songs)

@@ -74,15 +74,15 @@
         <!-- <br> -->
         <div class="ml-container">
           <form action="{{ url_for('recommendations') }}" id="form" method="POST">
-            <input class="input" type="text" name="URL">
+            <input class="input" type="text" name="URL" value="{{ URL }}">
             <br>
             <label for="recommend-size">How many songs would you like to have
               suggested?</label>
             <select name="recommend-size" id="recommend-size" form="form">
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
-              <option value="20">20</option>
+              <option value="5" {% if recommend_size == 5 %}selected{% endif %}>5</option>
+              <option value="10" {% if recommend_size == 10 %}selected{% endif %}>10</option>
+              <option value="15" {% if recommend_size == 15 %}selected{% endif %}>15</option>
+              <option value="20" {% if recommend_size == 20 %}selected{% endif %}>20</option>
             </select>
             <br>
             <input class="button" form="form" value="Click to make the magic happen!" type="submit">

@@ -53,7 +53,7 @@ def recommendations():
     else:
         recommended_songs
 
-    return render_template('recommendations.html', user_playlist=user_playlist, recommended_songs=recommended_songs)
+    return render_template('recommendations.html', user_playlist=user_playlist, recommended_songs=recommended_songs, URL=URL, recommend_size=number_requested)
 
 
 # debugger to edit while running

@@ -15,7 +15,7 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	background-position-x: 50%;
-	background-position-y: 90%;
+	background-position-y: 80%;
 }
 
 nav {
@@ -50,7 +50,7 @@ nav ul li a {
 	background-color: antiquewhite;
 	color: black;
 	padding: 15px;
-	margin: 30px;
+	margin: 40px;
 }
 
 .dropdown-menu {

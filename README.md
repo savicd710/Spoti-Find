@@ -1,4 +1,4 @@
-![landing page](https://github.com/dabidma/Spoti-Find/blob/main/Screenshots/landing_page.png)
+![landing page](https://github.com/dabidma/Spoti-Find/blob/main/screenshots/landing_page.png)
 
 
 # **Spoti-Find**
@@ -120,7 +120,7 @@ def generate_recommendation(song_name, model_type=cosine ):
 ---
 Ultimately, we were able to build his song recommendation web application through Python Flask. User provides a link to a spotify playlist. The application will take the playlist and begin requesting metric data on each song in this playlist to give us an idea of the genre of music. Additionally using the machine learning algorithms, user will get returned songs that are similar based on the initial playlist.
 
-![web app](Screenshots/recommender.png)
+![web app](screenshots/recommender.png)
 
 
 ## Limitations

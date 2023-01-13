@@ -170,7 +170,7 @@ nav ul li a {
 		border-color: black;
 	}
 
-	h1 {
-		font-size: 80px;
+	.content h1 {
+		font-size: 100px;
 	}
 }

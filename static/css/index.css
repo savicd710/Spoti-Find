@@ -169,4 +169,8 @@ nav ul li a {
 	.dropdown-menu {
 		border-color: black;
 	}
+
+	h1 {
+		font-size: 80px;
+	}
 }

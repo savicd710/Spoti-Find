@@ -168,11 +168,7 @@ option {
 
 .row {
     padding: 15px;
-    width: auto;
-}
-
-.recommendations {
-    width: fit-content;
+    /* width: auto; */
 }
 
 #error {
@@ -214,10 +210,10 @@ option {
     }
 
     .card {
-        width: 400px;
+        width: 350px;
     }
 
     .input {
-        width: 400px;
+        width: 350px;
     }
 }

@@ -15,11 +15,11 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	background-position-x: 50%;
-	background-position-y: 80%;
+	background-position-y: 90%;
 }
 
 nav {
-	width: 100%;
+	width: auto;
 	background: #1DB954;
 	position: absolute;
 	padding: 8%;
@@ -50,7 +50,8 @@ nav ul li a {
 	background-color: antiquewhite;
 	color: black;
 	padding: 15px;
-	margin: 40px;
+	margin: 60px;
+	width: auto;
 }
 
 .dropdown-menu {
@@ -83,12 +84,12 @@ nav ul li a {
 }
 
 .content {
-	display: flex;
+	display: block;
 	align-items: center;
 	justify-content: center;
 	text-align: center;
 	flex-direction: column;
-	height: 40vh;
+	height: 60vh;
 }
 
 .content h1 {
@@ -97,7 +98,7 @@ nav ul li a {
 	-webkit-text-stroke: 3px #1DB954;
 	font-weight: 600;
 	transition: 0.5s;
-	position: static;
+	position: sticky;
 }
 
 .content h1:hover {
@@ -160,7 +161,7 @@ nav ul li a {
 		border-color: black;
 	}
 
-	h1 {
-		margin-top: 80px;
+	#mediadrop {
+		align-items: center;
 	}
 }
